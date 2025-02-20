@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class FinishLine : MonoBehaviour
 {
 
     [SerializeField] float reloadDelay = 1f;
+    [SerializeField] ParticleSystem finishEffect;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,6 +24,7 @@ public class FinishLine : MonoBehaviour
         {
             Debug.Log("You finished!");
            Invoke("ReloadScene", reloadDelay);
+           finishEffect.Play();
         }
     }
 
