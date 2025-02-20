@@ -6,6 +6,7 @@ public class CrashDetector : MonoBehaviour
 {
     [SerializeField] float reloadDelay = 1f;
     [SerializeField] ParticleSystem bumpEffect;
+    [SerializeField] AudioClip audioClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,6 +26,7 @@ public class CrashDetector : MonoBehaviour
         {
             Invoke("ReloadScene",reloadDelay);
             bumpEffect.Play();
+            GetComponent<AudioSource>().PlayOneShot(audioClip);
         }
     }
 
