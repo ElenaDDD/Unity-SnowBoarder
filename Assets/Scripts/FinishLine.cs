@@ -21,7 +21,7 @@ public class FinishLine : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("You finished!");
-           Invoke("ReloadScene", 1f);
+           Invoke("ReloadScene", reloadDelay);
         }
     }
 
